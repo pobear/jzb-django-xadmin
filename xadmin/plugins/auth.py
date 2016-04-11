@@ -27,11 +27,11 @@ ACTION_NAME = {
 
 
 def get_permission_name(p):
-    action = p.codename.split('_')[0]
-    if action in ACTION_NAME:
-        return ACTION_NAME[action] % str(p.content_type)
-    else:
-        return p.name
+    # action = p.codename.split('_')[0]
+    # if action in ACTION_NAME:
+    #     return ACTION_NAME[action] % str(p.content_type)
+    # else:
+    return p.name
 
 
 class PermissionModelMultipleChoiceField(ModelMultipleChoiceField):
