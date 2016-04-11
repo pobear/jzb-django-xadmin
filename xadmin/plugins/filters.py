@@ -161,11 +161,11 @@ class FilterPlugin(BaseAdminPlugin):
             if field_name.startswith('^'):
                 return "%s__istartswith" % field_name[1:]
             elif field_name.startswith('='):
-                return "%s__iexact" % field_name[1:]
+                return "%s__exact" % field_name[1:]
             elif field_name.startswith('@'):
                 return "%s__search" % field_name[1:]
             else:
-                return "%s__contains" % field_name
+                return "%s__icontains" % field_name
 
         if self.search_fields and query:
             orm_lookups = [construct_search(str(search_field))
